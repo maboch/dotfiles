@@ -1,0 +1,37 @@
+onboarding = false
+
+[ui.toast]
+delivery = "system"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "hidden"
+sidebar_width = 32
+sidebar_max_width = 40
+agent_panel_sort = "spaces"
+
+[ui.sound]
+enabled = true
+
+[theme]
+name = "catppuccin"
+auto_switch = false
+
+[[keys.command]]              # open in a split beside your work
+key = "prefix+f"
+type = "shell"
+command = "herdr plugin action invoke open-file-viewer --plugin herdr-file-viewer"
+
+[[keys.command]]              # …or in its own tab
+key = "prefix+shift+f"
+type = "shell"
+command = "herdr plugin action invoke open-file-viewer-tab --plugin herdr-file-viewer"
+
+[[keys.command]]
+key = "prefix+shift+r"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"   # <plugin_id>.<action_id> — note the id, not the name
+
+[worktrees]
+directory = "~/Praca/git/worktrees"
