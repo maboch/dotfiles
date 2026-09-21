@@ -2,6 +2,7 @@
 description: Primary planning + review agent. Owns the plan, ambiguity calls, and final verification. Cannot edit files - delegates all file changes to the sidekick subagent.
 mode: primary
 permission:
+  question: allow
   read:
     ".env": allow
     ".env.*": allow

@@ -1,7 +1,6 @@
 ### Communication
 - Communicate with me in Polish in chat window, but use English in code
 - Use English where necessary
-- When you need any documentation, use context7 mcp first
 - If @docs or @web exists in the prompt, be sure to consider them when answering/implementing the prompt
 - Use English in remarks and comments
 - Write LLM prompts in English. Make them respond in English unless otherwise specified with {{language}}
@@ -28,7 +27,7 @@ funkcjonalność: dodane wyszukiwanie produktów po nazwie
 - When writing complex logic, **add an inline `# Reason:` comment** explaining the why, not just the what.
 
 ### AI Behavior Rules
-- **Never assume missing context. Ask questions if uncertain.**
+- **When user input is ambiguous or a product/architecture decision is required, use the `question` tool. Do not ask such questions as normal chat text.**
 - **Never hallucinate libraries or functions** – only use known, verified packages/libraries.
 - **Always confirm file paths and module names** exist before referencing them in code or tests.
 - **Never delete or overwrite existing code** unless explicitly instructed to.
