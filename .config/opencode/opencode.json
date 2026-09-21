@@ -20,31 +20,32 @@
   ],
   "agent": {
     "build": {
-      "model": "openai/gpt-5.6-sol",
+      "model": "openai/gpt-6-astra",
       "options": {
-        "reasoning_effort": "max"
+        "reasoningEffort": "medium"
       },
+      "variant": "medium",
       "permission": {
         "skill": { "brainstorming": "deny" }
       }
     },
     "plan": {
-      "model": "openai/gpt-5.6-sol",
+      "model": "openai/gpt-6-astra",
       "options": {
-        "reasoning_effort": "max"
+        "reasoningEffort": "medium"
       },
       "permission": {
         "skill": { "brainstorming": "ask" }
       }
     },
     "sidekick": {
-      "model": "deepseek/deepseek-v4-flash",
+      "model": "deepseek/deepseek-flash",
       "permission": {
         "skill": { "brainstorming": "deny" }
       }
     },
     "explore": {
-      "model": "deepseek/deepseek-v4-flash",
+      "model": "deepseek/deepseek-flash",
       "permission": {
         "skill": { "brainstorming": "deny" }
       }
@@ -52,7 +53,7 @@
     "research": {
       "model": "openai/gpt-5.6-terra",
       "options": {
-        "reasoning_effort": "max"
+        "reasoningEffort": "max"
       },
       "permission": {
         "skill": { "brainstorming": "deny" }
@@ -61,17 +62,18 @@
     "design": {
       "model": "alibaba-token-plan/qwen3.8-max",
       "options": {
-        "reasoning_effort": "max"
+        "reasoningEffort": "max"
       },
       "permission": {
         "skill": { "brainstorming": "deny" }
       }
     },
     "reviewer": {
-      "model": "openai/gpt-5.6-sol",
+      "model": "openai/gpt-6-astra",
       "options": {
-        "reasoning_effort": "max"
+        "reasoningEffort": "medium"
       },
+      "variant": "medium",
       "permission": {
         "skill": { "brainstorming": "deny" }
       }
@@ -110,6 +112,9 @@
         },
         "deepseek-v4-pro": {
           "name": "DeepSeek V4 Pro"
+        },
+        "deepseek-flash": {
+          "name": "DeepSeek V4.1 Flash"
         }
       }
     },
@@ -126,6 +131,13 @@
         "gpt-5.6-sol": {
           "options": {
             "reasoningEffort": "max",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+          },
+        },
+        "gpt-6-astra": {
+          "options": {
+            "reasoningEffort": "medium",
             "textVerbosity": "low",
             "reasoningSummary": "auto",
           },
