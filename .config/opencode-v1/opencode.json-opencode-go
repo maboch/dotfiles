@@ -1,0 +1,96 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "mcp": {
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app"
+    }
+  },
+  "plugin": [
+    "opencode-working-memory",
+    "@tarquinen/opencode-dcp@latest",
+    "@slkiser/opencode-quota",
+    "openrtk",
+    "opencode-skill-creator",
+    [
+      "opencode-tool-search@latest",
+      {
+        "alwaysLoad": [
+          "read",
+          "write",
+          "edit",
+          "bash",
+          "glob",
+          "grep"
+        ]
+      }
+    ],
+    "@honcho-ai/opencode-honcho"
+  ],
+  "agent": {
+    "build": {
+      "model": "opencode-go/kimi-k3"
+    },
+    "plan": {
+      "model": "opencode-go/kimi-k3"
+    },
+    "ask": {
+      "description": "General purpose tool",
+      "mode": "primary",
+      "model": "moonshotai/kimi-k2.6",
+      "prompt": "You are general purpose AI chat, you can be asked anything. Reply in Polish",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+    "sidekick": {
+      "model": "opencode-go/deepseek-v4-flash"
+    },
+    "explore": {
+      "model": "opencode-go/deepseek-v4-flash"
+    },
+    "research": {
+      "model": "opencode-go/kimi-k2.7-code"
+    },
+    "design": {
+      "model": "opencode-go/kimi-k3"
+    },
+    "reviewer": {
+      "model": "opencode-go/grok-4.5"
+      "reasoningEffort": "max",
+    }
+  },
+  "experimental": {
+    "quotaToast": {
+      "enableToast": false,
+      "showSessionTokens": true,
+      "enabledProviders": "auto",
+      "formatStyle": "classic",
+      "percentDisplayMode": "remaining"
+    }
+  },
+  "subagent_depth": 2,
+  "model": "opencode-go/kimi-k3",
+  "small_model": "opencode-go/deepseek-v4-flash",
+  "provider": {
+    "opencode-go": {
+      "models": {
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash"
+        },
+        "kimi-k2.7-code": {
+          "name": "Kimi K2.7 Code"
+        },
+        "kimi-k3": {
+          "name": "Kimi K3"
+        },
+        "grok-4.5": {
+          "name": "Grok 4.5"
+        }
+      }
+    }
+  }
+}

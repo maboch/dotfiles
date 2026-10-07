@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/maboch/opencode-ntfy-with-questions/main/notification-ntfy-with-questions.schema.json",
+  "enabled": true,
+  "events": {
+    "session.idle": true,
+    "session.error": true,
+    "permission.asked": true,
+    "question.asked": true
+  },
+  "suppressSubagents": {
+    "session.idle": true,
+    "session.error": true
+  },
+  "permissionNotificationDelayMs": 15000,
+  "ntfy": {
+    "server": "",
+    "topic": "opencode"
+  }
+}

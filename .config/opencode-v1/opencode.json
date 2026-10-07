@@ -12,27 +12,38 @@
     }
   },
   "plugin": [
+    "@slkiser/opencode-quota@latest",
     "@tarquinen/opencode-dcp@latest",
-    "@slkiser/opencode-quota",
     "openrtk",
     "@honcho-ai/opencode-honcho",
-    "opencode-ntfy-with-questions"
+    "opencode-ntfy-with-questions@prev"
   ],
+  "default_agent": "orchestrator",
   "agent": {
     "build": {
-      "model": "openai/gpt-6-astra",
+      "model": "openai/gpt-6.1-sol",
       "options": {
-        "reasoningEffort": "medium"
+        "reasoningEffort": "max"
       },
-      "variant": "medium",
+      "variant": "max",
+      "permission": {
+        "skill": { "brainstorming": "deny" }
+      }
+    },
+    "orchestrator": {
+      "model": "openai/gpt-6.1-sol",
+      "options": {
+        "reasoningEffort": "max"
+      },
+      "variant": "max",
       "permission": {
         "skill": { "brainstorming": "deny" }
       }
     },
     "plan": {
-      "model": "openai/gpt-6-astra",
+      "model": "openai/gpt-6.1-sol",
       "options": {
-        "reasoningEffort": "medium"
+        "reasoningEffort": "max"
       },
       "permission": {
         "skill": { "brainstorming": "ask" }
@@ -51,10 +62,7 @@
       }
     },
     "research": {
-      "model": "openai/gpt-5.6-terra",
-      "options": {
-        "reasoningEffort": "max"
-      },
+      "model": "deepseek/deepseek-flash",
       "permission": {
         "skill": { "brainstorming": "deny" }
       }
@@ -77,15 +85,6 @@
       "permission": {
         "skill": { "brainstorming": "deny" }
       }
-    }
-  },
-  "experimental": {
-    "quotaToast": {
-      "enableToast": false,
-      "showSessionTokens": true,
-      "enabledProviders": "auto",
-      "formatStyle": "classic",
-      "percentDisplayMode": "remaining"
     }
   },
   "subagent_depth": 2,
@@ -135,6 +134,20 @@
             "reasoningSummary": "auto",
           },
         },
+        "gpt-6-sol": {
+          "options": {
+            "reasoningEffort": "max",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+          },
+        },
+        "gpt-6.1-sol": {
+          "options": {
+            "reasoningEffort": "max",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+          },
+        },
         "gpt-6-astra": {
           "options": {
             "reasoningEffort": "medium",
@@ -151,6 +164,21 @@
         },
       },
     },
-    "minimax-coding-plan": {}
+    "localproxy": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Lokalne proxy",
+      "options": {
+        "baseURL": "http://127.0.0.1:8317/v1",
+        "apiKey": "sk-mb-nfPnZBV96Zzo3NUZI4X3pd0ypx8m5mEafTctrcqHOTo"
+      },
+      "models": {
+        "claude-opus-5-5": {
+          "name": "Claude Opus 5.5"
+        }
+      }
+    },
+    "minimax-coding-plan": {},
+    // Detected opencode-go authentication; opencode-quota added this global provider declaration.
+    "opencode-go": {}
   }
 }

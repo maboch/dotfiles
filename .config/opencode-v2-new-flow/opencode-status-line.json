@@ -1,0 +1,55 @@
+{
+  "surface": [
+    "prompt.footer"
+  ],
+  "readings": ["sliding", "cumulative"],
+  "window": {
+    "ms": 3000,
+    "minSpanMs": 800,
+    "minTps": 0.5,
+    "bucketMs": 100,
+    "hold": true
+  },
+  "calibration": {
+    "enabled": true,
+    "charsPerToken": 4,
+    "min": 2.5,
+    "max": 7
+  },
+  "turn": {
+    "fold": true
+  },
+  "cap": {
+    "mode": "gauge",
+    "gaugeWidth": 11,
+    "gaugeFloor": 40
+  },
+  "colors": {
+    "enabled": true,
+    "fast": 50,
+    "slow": 20,
+    "palette": "gruvbox",
+    "exclude": ["diff"]
+  },
+  "history": {
+    "samples": 500
+  },
+  "stats": {
+    "windowMs": 60000
+  },
+  "usage": {
+    "segments": ["shells", "context", "cache", "meter", "diff", "cost", "time"],
+    "separator": " │ ",
+    "contextWidth": "gauge",
+    "warnAt": 70,
+    "dangerAt": 90
+  },
+  "padding": {
+    "app": {
+      "left": 2,
+      "right": 2,
+      "top": 0,
+      "bottom": 2
+    }
+  }
+}

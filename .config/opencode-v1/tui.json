@@ -1,0 +1,6 @@
+{
+  "plugin": [
+    "./tui-plugins/cache-stats.tsx"
+  ],
+  "$schema": "https://opencode.ai/tui.json"
+}
